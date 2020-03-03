@@ -8,6 +8,9 @@
     <ClCompile Include="DiscoverWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UrlWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Resource Files">
@@ -38,6 +41,9 @@
     <QtMoc Include="DiscoverWindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="UrlWindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="MainWindow.ui">
@@ -46,9 +52,15 @@
     <QtUic Include="DiscoverWindow.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="UrlWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="MainWindow.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtRcc Include="DiscoverWindow.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
