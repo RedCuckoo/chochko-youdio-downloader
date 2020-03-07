@@ -80,6 +80,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AudioDownloader.cpp" />
     <ClCompile Include="DiscoverWindow.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
@@ -102,6 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="UrlWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AudioDownloader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

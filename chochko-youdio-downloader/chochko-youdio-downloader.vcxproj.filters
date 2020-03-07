@@ -11,6 +11,9 @@
     <ClCompile Include="UrlWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AudioDownloader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Resource Files">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="UrlWindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="AudioDownloader.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
