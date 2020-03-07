@@ -1,5 +1,3 @@
-#include "MainWindow.h"
-#include "DiscoverWindow.h"
 #include "UrlWindow.h"
 #include <QtWidgets/QApplication>
 

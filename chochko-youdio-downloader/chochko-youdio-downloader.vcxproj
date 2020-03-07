@@ -81,25 +81,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AudioDownloader.cpp" />
-    <ClCompile Include="DiscoverWindow.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="UrlWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="MainWindow.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="DiscoverWindow.ui" />
-    <QtUic Include="MainWindow.ui" />
     <QtUic Include="UrlWindow.ui" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtRcc Include="DiscoverWindow.qrc" />
-    <QtRcc Include="MainWindow.qrc" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="DiscoverWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="UrlWindow.h" />
