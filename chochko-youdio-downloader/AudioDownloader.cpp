@@ -3,8 +3,10 @@
 #include <QTextStream>
 #include <QTextEdit>
 #include <QProcess>
+#include <QPushButton>
+#include <QProgressBar>
 
-AudioDownloader::AudioDownloader(QObject *parent, QString url, QTextEdit* output) : QObject(parent){
+AudioDownloader::AudioDownloader(QObject *parent, QString url, QTextEdit* output, QPushButton* button, QProgressBar* progressBar) : QObject(parent){
 	command = "youtube-dl";
 	defaultResultName = "%(title)s.%(ext)s";
 	saveLocation = QDir::currentPath() + "/" + defaultResultName;
@@ -20,14 +22,17 @@ AudioDownloader::AudioDownloader(QObject *parent, QString url, QTextEdit* output
 		}
 	}
 
-	argumentsList << "--extract-audio"
+	argumentsList << "-x"
 		<< "--audio-format"
 		<< "mp3"
+		<< "--prefer-avconv"
 		<< "-o"
 		<< saveLocation
-		<< url; //[5] - url
+		<< url;
 
 	this->output = output;
+	this->button = button;
+	this->progressBar = progressBar;
 
 	QProcess* downloadProcess = new QProcess(parent);
 	connect(downloadProcess, SIGNAL(started()), this, SLOT(on_downloadProcess_started()));
@@ -35,7 +40,6 @@ AudioDownloader::AudioDownloader(QObject *parent, QString url, QTextEdit* output
 	connect(downloadProcess, SIGNAL(finished(int, QProcess::ExitStatus)) , this, SLOT(on_downloadProcess_finished(int, QProcess::ExitStatus)));
 	
 	downloadProcess->start(command, argumentsList);
-	downloadProcess->waitForFinished();
 }
 
 AudioDownloader::~AudioDownloader(){
@@ -44,6 +48,10 @@ AudioDownloader::~AudioDownloader(){
 
 void AudioDownloader::on_downloadProcess_started() {
 	output->append("Download started");
+	button->setDisabled(true);
+
+	if(progressBar)
+		progressBar->show();
 }
 
 void AudioDownloader::on_downloadProcess_errorOccurred(QProcess::ProcessError error) {
@@ -96,4 +104,9 @@ void AudioDownloader::on_downloadProcess_finished(int exitCode, QProcess::ExitSt
 		output->append("ERROR OCCURED\n");
 		break;
 	}
+
+	button->setEnabled(true);
+	
+	if(progressBar)
+		progressBar->hide();
 }
