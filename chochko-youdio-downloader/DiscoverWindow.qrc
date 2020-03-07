@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/icons">
-        <file>Resources/browser_icons/arrow-left.png</file>
-        <file>Resources/browser_icons/arrow-right.png</file>
-        <file>Resources/browser_icons/homepage.png</file>
-        <file>Resources/browser_icons/refresh.png</file>
-        <file>Resources/browser_icons/stop.png</file>
-    </qresource>
-</RCC>
