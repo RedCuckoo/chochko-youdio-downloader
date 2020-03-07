@@ -34,3 +34,9 @@ void UrlWindow::on_lineEdit_textChanged(const QString& text) {
 void UrlWindow::on_pushButton_clicked() {
 	AudioDownloader* download = new AudioDownloader(this, cachedUrl, ui.textEdit, ui.pushButton, ui.progressBar);
 }
+
+void UrlWindow::on_lineEdit_returnPressed() {
+	if (ui.pushButton->isEnabled()) {
+		ui.pushButton->clicked();
+	}
+}

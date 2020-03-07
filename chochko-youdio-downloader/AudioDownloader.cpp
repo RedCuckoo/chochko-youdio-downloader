@@ -5,6 +5,7 @@
 #include <QProcess>
 #include <QPushButton>
 #include <QProgressBar>
+#include <QKeyEvent>
 
 AudioDownloader::AudioDownloader(QObject *parent, QString url, QTextEdit* output, QPushButton* button, QProgressBar* progressBar) : QObject(parent){
 	command = "youtube-dl";
@@ -29,6 +30,7 @@ AudioDownloader::AudioDownloader(QObject *parent, QString url, QTextEdit* output
 		<< "-o"
 		<< saveLocation
 		<< url;
+
 
 	this->output = output;
 	this->button = button;
