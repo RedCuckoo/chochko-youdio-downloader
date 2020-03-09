@@ -70,4 +70,7 @@
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="main_window_resources.rc" />
+  </ItemGroup>
 </Project>

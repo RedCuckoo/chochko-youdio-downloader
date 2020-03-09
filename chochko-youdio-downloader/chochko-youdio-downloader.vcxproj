@@ -42,11 +42,11 @@
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <QtInstall>5.14.1</QtInstall>
+    <QtInstall>5.14.1_x64</QtInstall>
     <QtModules>core;gui;webengine;webenginewidgets;widgets</QtModules>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <QtInstall>5.14.1</QtInstall>
+    <QtInstall>5.14.1_x64</QtInstall>
     <QtModules>core;gui;webengine;webenginewidgets;widgets</QtModules>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
@@ -106,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AudioDownloader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="main_window_resources.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
