@@ -44,4 +44,7 @@
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="main_window_resources.rc" />
+  </ItemGroup>
 </Project>
